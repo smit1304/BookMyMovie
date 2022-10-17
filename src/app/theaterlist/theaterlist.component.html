@@ -1,0 +1,58 @@
+<div class="row" style="text-align: center">
+  <div class="col-12" style="margin-top: 2rem; margin-bottom: 2rem">
+    Please select the city and theater to proceed.
+  </div>
+</div>
+
+<div
+  class=""
+  style="
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <mat-form-field appearance="fill">
+    <mat-label>City</mat-label>
+    <mat-select [(value)]="selectedCity">
+      <mat-option
+        *ngFor="let city of cityList"
+        [value]="city.value"
+        (click)="resetTheater(city)"
+      >
+        {{ city.value }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill" style="margin-left: 3rem">
+    <mat-label>Theater</mat-label>
+    <mat-select [(value)]="selectedTheater">
+      <mat-option *ngFor="let theater of selectedTheaterList" [value]="theater">
+        {{ theater }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="cities" style="text-align: center"></div>
+
+<div class="btns" id="buttons">
+  <button
+    id="btn"
+    mat-raised-button
+    color="primary"
+    [disabled]="false"
+    (click)="goPrevious()"
+  >
+    < Previous
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="selectedTheater == null || selectedCity == null"
+    (click)="goNext()"
+    style="margin-left: 3rem !important"
+  >
+    Next >
+  </button>
+</div>

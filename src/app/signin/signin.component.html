@@ -1,0 +1,108 @@
+<div class="mainv"></div>
+<!-- <div class="authimg1">
+  <img
+    src="/assets/images/auth1.png"
+    style="height: 40vh; position: absolute; top: 3rem; left: 3rem"
+  />
+</div>
+<div class="authimg2">
+  <img
+    src="/assets/images/auth2.png"
+    style="height: 40vh; position: absolute; bottom: 3rem; right: 3rem"
+  />
+</div> -->
+<div class="center-screen">
+  <div class="auth_box">
+    <mat-card class="cus_card" [class.mat-elevation-z8]="true">
+      <img
+        class="my-4"
+        src="/assets/images/ds.PNG"
+        height="50px"
+        style="margin: 2rem"
+      />
+
+      <form class="example-form" style="padding-top: 0">
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input matInput type="text" [(ngModel)]="email" name="email" />
+          <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                            <mat-icon>close</mat-icon>
+                        </button> -->
+        </mat-form-field>
+        <!-- <p class="error_msg">This field is required</p> -->
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            [(ngModel)]="password"
+            name="password"
+          />
+          <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                            <mat-icon>close</mat-icon>
+                        </button> -->
+        </mat-form-field>
+        <!-- <p class="error_msg">This field is required</p> -->
+
+        <!-- <div
+          class="text-right"
+          style="
+            width: 100%;
+            text-align: right;
+            margin-bottom: 1rem;
+            padding-right: 8rem;
+          "
+        >
+          <a
+            mat-button
+            (click)="signUpClicked()"
+            style="color: rgb(28, 86, 196)"
+            >Not a user? Sign Up</a
+          >
+        </div> -->
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="loginClicked()"
+          [disabled]="isLoginInValid()"
+          style="margin-bottom: 2rem"
+        >
+          Login
+        </button>
+        <!-- <button
+          mat-raised-button
+          color="primary"
+          (click)="testCliked()"
+          style="margin-bottom: 2rem"
+        >
+          Test
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="test2Clicked()"
+          style="margin-bottom: 2rem"
+        >
+          Test2
+        </button> -->
+      </form>
+
+      <div
+        class="row"
+        style="
+          text-align: right;
+          padding-right: 2rem;
+          margin: 0;
+          padding-top: 2px;
+          padding-bottom: 2px;
+        "
+      >
+        <p style="margin: 0; padding: 0; font-size: smaller">
+          Version {{ environmentVERSION }}
+        </p>
+      </div>
+    </mat-card>
+  </div>
+</div>
+<ngx-spinner></ngx-spinner>

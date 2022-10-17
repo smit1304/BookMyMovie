@@ -1,0 +1,32 @@
+<div class="movieList">
+  <div
+    class="movie_card"
+    id="bright"
+    *ngFor="let item of movielist"
+    (click)="itemClicked(item)"
+    style="background: url('{{ item.bg }}');"
+  >
+    <div class="info_section">
+      <div class="movie_header">
+        <img class="locandina" [src]="item.src" />
+        <h1>{{ item.name }}</h1>
+        <h4>{{ item.info }}</h4>
+        <span class="minutes">{{ item.min }} min</span>
+        <p class="type">{{ item.gener == null ? "" : item.gener.join(",") }}</p>
+      </div>
+      <div class="movie_desc">
+        <p class="text">
+          {{ item.desc }}
+        </p>
+      </div>
+      <div class="movie_social">
+        <ul>
+          <!-- <li><i class="material-icons">share</i></li>
+        <li><i class="material-icons"></i></li>
+        <li><i class="material-icons">chat_bubble</i></li> -->
+        </ul>
+      </div>
+    </div>
+    <div class="blur_back tomb_back"></div>
+  </div>
+</div>

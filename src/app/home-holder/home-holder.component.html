@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <span>BookMyMovie</span>
+  <span class="example-spacer"></span>
+  <span>{{ user == null ? "" : user }}</span>
+  <!-- <button mat-flat-button (click)="setup()">Setup</button> -->
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+    (click)="logOutClicked()"
+  >
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
+<div class="mainHolder">
+  <!-- <app-movie-cards></app-movie-cards> -->
+  <router-outlet></router-outlet>
+</div>
+<!-- <div class="footer">This is footer&nbsp;&nbsp;&nbsp;&nbsp;</div> -->

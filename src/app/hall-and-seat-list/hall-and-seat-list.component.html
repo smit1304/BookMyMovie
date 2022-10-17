@@ -1,0 +1,81 @@
+<div class="row" style="text-align: center">
+  <div class="col-12" style="margin-top: 2rem; margin-bottom: 2rem">
+    Please select the city and theater to proceed.
+  </div>
+</div>
+<div
+  class=""
+  style="
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <mat-form-field appearance="fill">
+    <mat-label>Select Hall</mat-label>
+    <mat-select [(value)]="selectedHall">
+      <mat-option *ngFor="let listitem of hallList" [value]="listitem">{{
+        listitem
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill" style="margin-left: 3rem">
+    <mat-label>Total Seats</mat-label>
+    <mat-select [(value)]="selectedSeatCount">
+      <mat-option
+        *ngFor="let listitem of [1, 2, 3, 4, 5, 6, 7]"
+        [value]="listitem"
+        >{{ listitem }}</mat-option
+      >
+    </mat-select>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="
+      selectedHall == null ||
+      selectedSeatCount == null ||
+      selectedSeatCount == 0
+    "
+    (click)="showSeats = true"
+    style="margin-left: 2rem"
+  >
+    Show Seats
+  </button>
+</div>
+<!-- <div class="row">
+  <div class="col-md-8" style="text-align: left">
+    <div class="flexRow"></div> -->
+<div
+  class="mainHolder"
+  *ngIf="showSeats"
+  style="overflow: auto; max-height: 60vh; padding: 3rem"
+>
+  <div class="sitRow" *ngFor="let sitRow of sitRows">
+    <div class="sit" *ngFor="let sit of sitRow.sits" (click)="seatClick(sit)">
+      <img src="/assets/images/seat.png" width="50" height="50" />
+      <h3
+        [style.color]="sit.booked || sit.selected ? 'white' : 'black'"
+        [style.backgroundColor]="
+          sit.booked ? 'red' : sit.selected ? 'green' : 'white'
+        "
+        style="text-align: center"
+      >
+        {{ sit.sitId }}
+      </h3>
+    </div>
+  </div>
+</div>
+<div style="width: 100%; text-align: center">
+  <button
+    mat-raised-button
+    (click)="confirmSeats()"
+    *ngIf="isValid()"
+    color="primary"
+  >
+    Confirm Seat/s
+  </button>
+</div>
+<!-- </div>
+</div> -->

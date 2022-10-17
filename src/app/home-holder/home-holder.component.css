@@ -1,0 +1,23 @@
+mat-toolbar {
+  background-color: #2196f3;
+  color: black;
+  height: 64px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.footer {
+  /* position: absolute;
+    bottom: 0; */
+  height: 64px;
+  width: calc(100% - 10px);
+  text-align: right;
+  /* margin: 5px; */
+}
+.mainHolder {
+  width: 100%;
+  /* text-align: right; */
+  /* margin: 5px; */
+  height: calc(100% - 128px);
+  overflow: auto;
+}

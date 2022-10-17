@@ -1,0 +1,48 @@
+<div style="padding-left: 30rem">
+  <div class="row" style="text-align: left">
+    <div
+      class="col-12"
+      style="
+        margin-top: 10rem;
+        margin-bottom: 2rem;
+        font-size: large;
+        margin-left: 3rem;
+      "
+    >
+      Amount to be Paid :
+      <span style="font-weight: bold">{{ seatc * seatCost }}</span
+      ><br /><br /><br />
+      Please select payment Method and proceed<br /><br />
+    </div>
+  </div>
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      width: 100%;
+      justify-content: stretch;
+      align-items: flex-start;
+      padding-left: 2rem;
+    "
+  >
+    <mat-form-field appearance="fill" style="font-size: medium; width: 50%">
+      <mat-label>Select Payment Method</mat-label>
+      <mat-select [(value)]="selectePay">
+        <mat-option *ngFor="let option of paymentOptions" [value]="option">
+          {{ option }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="" *ngIf="selectePay == 'Cash'">
+      <div>Thank you for Booking You are Requested To Pay at Ticket Window</div>
+    </div>
+    <div class="" *ngIf="selectePay == 'Paytm/gpay'">
+      <div>Please scan the below qr code and finish the payment</div>
+      <img src="assets/images/qr.png" />
+    </div>
+    <button mat-raised-button color="accent" (click)="proceed()">
+      Validate Payment
+    </button>
+  </div>
+</div>

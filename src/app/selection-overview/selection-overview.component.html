@@ -1,0 +1,36 @@
+<div class="movie_card" id="bright">
+  <div
+    class="info_section"
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    "
+  >
+    <h1 *ngIf="item != null">Movie Selected: {{ item.name }}</h1>
+    <img class="locandina" [src]="item.src" *ngIf="item != null" />
+
+    <!-- <h4>{{ item.info }}</h4> -->
+    <span *ngIf="item != null" class="minutes">{{ item.min }} min</span>
+    <p *ngIf="item != null" class="type">
+      {{ item.gener == null ? "" : item.gener.join(",") }}
+    </p>
+    <p *ngIf="city != null" class="type">
+      City : {{ city == null ? "" : city }}
+    </p>
+    <p *ngIf="theater != null" class="type">
+      Theater : {{ theater == null ? "" : theater }}
+    </p>
+    <p *ngIf="hall != null" class="type">
+      Hall : {{ hall == null ? "" : hall }}
+    </p>
+    <p *ngIf="seatc != null" class="type">
+      Seat Count : {{ seatc == null ? "" : seatc }}
+    </p>
+    <p *ngIf="seat != null" class="type">
+      Seat/s : {{ seat == null ? "" : seat }}
+    </p>
+  </div>
+</div>

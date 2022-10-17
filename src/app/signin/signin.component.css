@@ -1,0 +1,70 @@
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  /* background-image: url('/assets/images/bglogin.png');
+        background-size: 100%; */
+}
+.auth_box {
+  width: 25%;
+}
+.auth_box .cus_card {
+  /* padding: 16px 25px; */
+  padding: 0px 0px;
+  background-color: rgba(255, 255, 255, 1);
+}
+mat-grid-tile {
+  background: lightblue;
+}
+.example-form {
+  width: 100%;
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.example-full-width {
+  width: 80%;
+}
+.error_msg {
+  color: #ff0000;
+  text-align: left;
+}
+.mainv {
+  background-image: linear-gradient(#c76e33, #c51633);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(45deg, 0%, #d18e11),
+    color-stop(45deg, 40%, #a7151c),
+    color-stop(45deg, 00%, #a7151c)
+  );
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.example-stretched-tabs {
+  width: 100%;
+  margin: 0;
+}
+
+.mat-tab-labels {
+  width: 100%;
+}
+
+.vnumber {
+  position: absolute;
+  bottom: 20;
+  right: 20;
+  z-index: 9999;
+}
+.logo {
+  color: #fa000c;
+}

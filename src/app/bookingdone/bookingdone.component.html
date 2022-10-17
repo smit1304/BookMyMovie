@@ -1,0 +1,66 @@
+<div
+  id="pdfD"
+  style="
+    border: 2px solid black;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20rem auto;
+  "
+>
+  <h1
+    style="
+      font-size: 30px;
+      text-align: center;
+      padding-top: 7px;
+      border-bottom: 2px solid black;
+    "
+  >
+    E-Ticket
+  </h1>
+  <div style="display: flex; margin: 0 auto">
+    <tbody id="" style="font-size: 23px">
+      <tr>
+        <td>Username:</td>
+        &nbsp;
+        <td>{{ username }}</td>
+      </tr>
+      <tr>
+        <td>Movie:</td>
+        &nbsp;
+        <td>{{ movie }}</td>
+      </tr>
+      <tr>
+        <td>Duration:</td>
+        &nbsp;
+        <td>{{ duration }} Mins</td>
+      </tr>
+      <tr>
+        <td>Theater:</td>
+        &nbsp;
+        <td>{{ theater }}</td>
+      </tr>
+      <tr>
+        <td>Hall:</td>
+        &nbsp;
+        <td>{{ hall }}</td>
+      </tr>
+      <tr>
+        <td>Seat Count:</td>
+        &nbsp;
+        <td>{{ seatCount }}</td>
+      </tr>
+      <tr>
+        <td>Seats:</td>
+        &nbsp;
+        <td>{{ seatNumber }}</td>
+      </tr>
+    </tbody>
+  </div>
+  <div class="" style="display: flex; margin: 5px auto">
+    <button mat-raised-button color="accent" (click)="downloadPDF()">
+      downloadPDF
+    </button>
+  </div>
+</div>
